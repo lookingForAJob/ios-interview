@@ -14,18 +14,10 @@
 		778B7B5E25CE0EC700683150 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 778B7B5D25CE0EC700683150 /* Assets.xcassets */; };
 		778B7B6125CE0EC700683150 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 778B7B5F25CE0EC700683150 /* LaunchScreen.storyboard */; };
 		778B7B6C25CE0EC700683150 /* PracticeProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778B7B6B25CE0EC700683150 /* PracticeProjectTests.swift */; };
-		778B7B7725CE0EC700683150 /* PracticeProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778B7B7625CE0EC700683150 /* PracticeProjectUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		778B7B6825CE0EC700683150 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 778B7B4925CE0EC500683150 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 778B7B5025CE0EC500683150;
-			remoteInfo = PracticeProject;
-		};
-		778B7B7325CE0EC700683150 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 778B7B4925CE0EC500683150 /* Project object */;
 			proxyType = 1;
@@ -46,9 +38,6 @@
 		778B7B6725CE0EC700683150 /* PracticeProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PracticeProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		778B7B6B25CE0EC700683150 /* PracticeProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeProjectTests.swift; sourceTree = "<group>"; };
 		778B7B6D25CE0EC700683150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		778B7B7225CE0EC700683150 /* PracticeProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PracticeProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		778B7B7625CE0EC700683150 /* PracticeProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeProjectUITests.swift; sourceTree = "<group>"; };
-		778B7B7825CE0EC700683150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,13 +55,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		778B7B6F25CE0EC700683150 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -81,7 +63,6 @@
 			children = (
 				778B7B5325CE0EC500683150 /* PracticeProject */,
 				778B7B6A25CE0EC700683150 /* PracticeProjectTests */,
-				778B7B7525CE0EC700683150 /* PracticeProjectUITests */,
 				778B7B5225CE0EC500683150 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,7 +72,6 @@
 			children = (
 				778B7B5125CE0EC500683150 /* PracticeProject.app */,
 				778B7B6725CE0EC700683150 /* PracticeProjectTests.xctest */,
-				778B7B7225CE0EC700683150 /* PracticeProjectUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,15 +99,6 @@
 			path = PracticeProjectTests;
 			sourceTree = "<group>";
 		};
-		778B7B7525CE0EC700683150 /* PracticeProjectUITests */ = {
-			isa = PBXGroup;
-			children = (
-				778B7B7625CE0EC700683150 /* PracticeProjectUITests.swift */,
-				778B7B7825CE0EC700683150 /* Info.plist */,
-			);
-			path = PracticeProjectUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -136,6 +107,7 @@
 			buildConfigurationList = 778B7B7B25CE0EC700683150 /* Build configuration list for PBXNativeTarget "PracticeProject" */;
 			buildPhases = (
 				778B7B4D25CE0EC500683150 /* Sources */,
+				778B7B8D25CE114200683150 /* SwiftLint */,
 				778B7B4E25CE0EC500683150 /* Frameworks */,
 				778B7B4F25CE0EC500683150 /* Resources */,
 			);
@@ -166,24 +138,6 @@
 			productReference = 778B7B6725CE0EC700683150 /* PracticeProjectTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		778B7B7125CE0EC700683150 /* PracticeProjectUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 778B7B8125CE0EC700683150 /* Build configuration list for PBXNativeTarget "PracticeProjectUITests" */;
-			buildPhases = (
-				778B7B6E25CE0EC700683150 /* Sources */,
-				778B7B6F25CE0EC700683150 /* Frameworks */,
-				778B7B7025CE0EC700683150 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				778B7B7425CE0EC700683150 /* PBXTargetDependency */,
-			);
-			name = PracticeProjectUITests;
-			productName = PracticeProjectUITests;
-			productReference = 778B7B7225CE0EC700683150 /* PracticeProjectUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -197,10 +151,6 @@
 						CreatedOnToolsVersion = 12.4;
 					};
 					778B7B6625CE0EC700683150 = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = 778B7B5025CE0EC500683150;
-					};
-					778B7B7125CE0EC700683150 = {
 						CreatedOnToolsVersion = 12.4;
 						TestTargetID = 778B7B5025CE0EC500683150;
 					};
@@ -221,7 +171,6 @@
 			targets = (
 				778B7B5025CE0EC500683150 /* PracticeProject */,
 				778B7B6625CE0EC700683150 /* PracticeProjectTests */,
-				778B7B7125CE0EC700683150 /* PracticeProjectUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -244,14 +193,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		778B7B7025CE0EC700683150 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		778B7B8D25CE114200683150 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
 			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint autocorrect && swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-/* End PBXResourcesBuildPhase section */
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		778B7B4D25CE0EC500683150 /* Sources */ = {
@@ -272,14 +235,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		778B7B6E25CE0EC700683150 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				778B7B7725CE0EC700683150 /* PracticeProjectUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -287,11 +242,6 @@
 			isa = PBXTargetDependency;
 			target = 778B7B5025CE0EC500683150 /* PracticeProject */;
 			targetProxy = 778B7B6825CE0EC700683150 /* PBXContainerItemProxy */;
-		};
-		778B7B7425CE0EC700683150 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 778B7B5025CE0EC500683150 /* PracticeProject */;
-			targetProxy = 778B7B7325CE0EC700683150 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -360,6 +310,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -373,6 +324,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
 			};
 			name = Debug;
 		};
@@ -415,6 +367,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -427,6 +380,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -513,46 +467,6 @@
 			};
 			name = Release;
 		};
-		778B7B8225CE0EC700683150 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H5AZQY9S42;
-				INFOPLIST_FILE = PracticeProjectUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryosuke.PracticeProjectUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = PracticeProject;
-			};
-			name = Debug;
-		};
-		778B7B8325CE0EC700683150 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H5AZQY9S42;
-				INFOPLIST_FILE = PracticeProjectUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryosuke.PracticeProjectUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = PracticeProject;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -579,15 +493,6 @@
 			buildConfigurations = (
 				778B7B7F25CE0EC700683150 /* Debug */,
 				778B7B8025CE0EC700683150 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		778B7B8125CE0EC700683150 /* Build configuration list for PBXNativeTarget "PracticeProjectUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				778B7B8225CE0EC700683150 /* Debug */,
-				778B7B8325CE0EC700683150 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
