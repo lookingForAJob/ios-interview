@@ -42,7 +42,7 @@ class JSONFetcher<T: JSONRequestProtocol> {
         self.urlSession = urlSession
     }
 
-    func fetch(completionHandler: @escaping ([RaywenderlichCourse]?, Error?) -> Void) {
+    func fetch(completionHandler: @escaping (RaywenderlichResponse?, Error?) -> Void) {
         do {
             let urlRequest = try request.makeRequest()
             print(urlRequest)
@@ -80,14 +80,38 @@ class JSONFetcherTests: XCTestCase {
     }
 
     func test_fetch() {
-        let mockJSONData = "[{\"data\":[{\"attributes\":{\"name\":\"dummy\"}}]}]".data(using: .utf8)!
+        let mockJSONData = "{\"data\":[{\"attributes\":{\"name\":\"dummy\"}}]}".data(using: .utf8)!
         MockURLProtocol.requestHandler = { _ in
             return (HTTPURLResponse(), mockJSONData)
         }
 
         let expectation = XCTestExpectation(description: "expected response")
         fetcher.fetch { data, error in
-            XCTAssertNotNil(data?.first)
+            XCTAssertNotNil(data?.data)
+            XCTAssertEqual(data?.data[0].attributes.name, "dummy")
+            XCTAssertNil(error)
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 1)
+    }
+
+    func test_fetchMultiple() {
+        let mockJSONString = """
+            {\"data\":[
+                {\"attributes\":{\"name\":\"dummy1\"}},
+                {\"attributes\":{\"name\":\"dummy2\"}},
+                {\"attributes\":{\"name\":\"dummy3\"}}
+            ]}
+        """
+        let mockJSONData = mockJSONString.data(using: .utf8)!
+        MockURLProtocol.requestHandler = { _ in
+            return (HTTPURLResponse(), mockJSONData)
+        }
+
+        let expectation = XCTestExpectation(description: "expected response")
+        fetcher.fetch { data, error in
+            XCTAssertEqual(data?.data.count, 3)
             XCTAssertNil(error)
             expectation.fulfill()
         }

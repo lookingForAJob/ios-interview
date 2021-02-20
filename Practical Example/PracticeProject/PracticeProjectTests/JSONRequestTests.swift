@@ -10,13 +10,13 @@ class JSONRequestTests: XCTestCase {
     }
 
     func test_parseResponse() throws {
-        let jsonData = "[{\"data\":[{\"attributes\":{\"name\":\"dummy\"}}]}]".data(using: .utf8)!
+        let jsonData = "{\"data\":[{\"attributes\":{\"name\":\"dummy\"}}]}".data(using: .utf8)!
 
         let response = try JSONRequest(url: URL(string: "https://dummyURL")!).parseResponse(data: jsonData)
 
-        let expectedAttributes = RaywenderlichCourse.Attributes(name: "dummy")
-        let expectedData = [RaywenderlichCourse.Data(attributes: expectedAttributes)]
-        let expectedRaywenderlichCourse = RaywenderlichCourse(data: expectedData)
-        XCTAssertEqual(response, [expectedRaywenderlichCourse])
+        let expectedAttributes = RaywenderlichResponse.Attributes(name: "dummy")
+        let expectedData = [RaywenderlichResponse.Data(attributes: expectedAttributes)]
+        let expectedRaywenderlichResponse = RaywenderlichResponse(data: expectedData)
+        XCTAssertEqual(response, expectedRaywenderlichResponse)
     }
 }

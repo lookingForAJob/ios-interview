@@ -1,4 +1,4 @@
-struct RaywenderlichCourse: Decodable, Equatable {
+struct RaywenderlichResponse: Decodable, Equatable {
     let data: [Data]
 
     struct Data: Decodable, Equatable {

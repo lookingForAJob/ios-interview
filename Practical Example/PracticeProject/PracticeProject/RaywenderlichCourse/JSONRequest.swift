@@ -2,7 +2,7 @@ import Foundation
 
 protocol JSONRequestProtocol {
     func makeRequest() throws -> URLRequest
-    func parseResponse(data: Data) throws -> [RaywenderlichCourse]
+    func parseResponse(data: Data) throws -> RaywenderlichResponse
 }
 
 struct JSONRequest: JSONRequestProtocol {
@@ -12,7 +12,7 @@ struct JSONRequest: JSONRequestProtocol {
         return URLRequest(url: url)
     }
 
-    func parseResponse(data: Data) throws -> [RaywenderlichCourse] {
-        return try JSONDecoder().decode([RaywenderlichCourse].self, from: data)
+    func parseResponse(data: Data) throws -> RaywenderlichResponse {
+        return try JSONDecoder().decode(RaywenderlichResponse.self, from: data)
     }
 }
