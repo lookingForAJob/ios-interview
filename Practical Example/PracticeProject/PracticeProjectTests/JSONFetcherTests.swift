@@ -2,7 +2,7 @@
 import XCTest
 
 class MockURLProtocol: URLProtocol {
-    static var requestHandler: ((URLRequest) throws -> (HTTPURLResponse, Data))?
+    static var requestHandler: ((URLRequest) throws -> (URLResponse, Data))?
 
     override class func canInit(with request: URLRequest) -> Bool {
         return true
@@ -65,7 +65,7 @@ class JSONFetcherTests: XCTestCase {
         wait(for: [expectation], timeout: 1)
     }
 
-    func test_fetchMultiple() {
+    func test_fetch_multiple() {
         let mockJSONString = """
             {\"data\":[
                 {\"attributes\":{\"name\":\"dummy1\"}},
@@ -75,7 +75,7 @@ class JSONFetcherTests: XCTestCase {
         """
         let mockJSONData = mockJSONString.data(using: .utf8)!
         MockURLProtocol.requestHandler = { _ in
-            return (HTTPURLResponse(), mockJSONData)
+            return (self.makeHTTPURLResponse(200), mockJSONData)
         }
 
         let expectation = XCTestExpectation(description: "expected response")
@@ -88,19 +88,56 @@ class JSONFetcherTests: XCTestCase {
         wait(for: [expectation], timeout: 1)
     }
 
-    func test_fetchInvalidJSON() {
-        let mockJSONData = "invalid json".data(using: .utf8)!
+    func test_fetch_invalidResponse() {
+        let dummyJSONData = "dummy".data(using: .utf8)!
         MockURLProtocol.requestHandler = { _ in
-            return (HTTPURLResponse(), mockJSONData)
+            return (URLResponse(), dummyJSONData)
         }
 
         let expectation = XCTestExpectation(description: "expected error")
         fetcher.fetch { data, error in
             XCTAssertNil(data)
-            XCTAssertNotNil(error)
+            XCTAssertEqual(error as? JSONFetchError, JSONFetchError.invalidResponse)
             expectation.fulfill()
         }
 
         wait(for: [expectation], timeout: 1)
+    }
+
+    func test_fetch_invalidJSON() {
+        let mockJSONData = "invalid json".data(using: .utf8)!
+        MockURLProtocol.requestHandler = { _ in
+            return (self.makeHTTPURLResponse(200), mockJSONData)
+        }
+
+        let expectation = XCTestExpectation(description: "expected error")
+        fetcher.fetch { data, error in
+            XCTAssertNil(data)
+            XCTAssertNotNil(error as? DecodingError)
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 1)
+    }
+
+    func test_fetch_statusCodeError() {
+        let dummyJSONData = "dummy".data(using: .utf8)!
+        let randomInvalidStatusCode = [301, 401, 501].randomElement()!
+        MockURLProtocol.requestHandler = { _ in
+            return (self.makeHTTPURLResponse(randomInvalidStatusCode), dummyJSONData)
+        }
+
+        let expectation = XCTestExpectation(description: "expected error")
+        fetcher.fetch { data, error in
+            XCTAssertNil(data)
+            XCTAssertEqual(error as? JSONFetchError, JSONFetchError.statusCode(randomInvalidStatusCode))
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 1)
+    }
+
+    private func makeHTTPURLResponse(_ statusCode: Int) -> HTTPURLResponse {
+        HTTPURLResponse(url: URL(string: "dummyURL")!, statusCode: statusCode, httpVersion: nil, headerFields: nil)!
     }
 }
