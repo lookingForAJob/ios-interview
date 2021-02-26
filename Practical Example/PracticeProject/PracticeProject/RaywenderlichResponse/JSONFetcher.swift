@@ -5,6 +5,7 @@ enum JSONFetchError: Error, Equatable {
     case statusCode(Int)
 }
 
+// TODO: try Combine. return Publisher? how to test Publisher?
 class JSONFetcher<T: JSONRequestProtocol> {
     let request: T
     let urlSession: URLSession
