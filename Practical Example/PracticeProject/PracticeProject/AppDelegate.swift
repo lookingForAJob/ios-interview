@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  PracticeProject
-//
-//  Created by ryosuke on 2/5/21.
-//
-
 import UIKit
 
 @main

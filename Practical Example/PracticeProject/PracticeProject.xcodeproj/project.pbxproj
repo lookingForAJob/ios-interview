@@ -15,6 +15,7 @@
 		778B7B5C25CE0EC500683150 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 778B7B5A25CE0EC500683150 /* Main.storyboard */; };
 		778B7B5E25CE0EC700683150 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 778B7B5D25CE0EC700683150 /* Assets.xcassets */; };
 		778B7B6125CE0EC700683150 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 778B7B5F25CE0EC700683150 /* LaunchScreen.storyboard */; };
+		77C9231A25E9AE2A00F00323 /* JSONFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C9231925E9AE2A00F00323 /* JSONFetcher.swift */; };
 		77F1BFE725E07E0600F6FE37 /* JSONFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F1BFE625E07E0600F6FE37 /* JSONFetcherTests.swift */; };
 		77F1BFEB25E081AA00F6FE37 /* JSONRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F1BFEA25E081AA00F6FE37 /* JSONRequest.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		778B7B6225CE0EC700683150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		778B7B6725CE0EC700683150 /* PracticeProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PracticeProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		778B7B6D25CE0EC700683150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77C9231925E9AE2A00F00323 /* JSONFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFetcher.swift; sourceTree = "<group>"; };
 		77F1BFE625E07E0600F6FE37 /* JSONFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFetcherTests.swift; sourceTree = "<group>"; };
 		77F1BFEA25E081AA00F6FE37 /* JSONRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,13 +66,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7705CE9C25D741FC00C2C178 /* RaywenderlichCourse */ = {
+		7705CE9C25D741FC00C2C178 /* RaywenderlichResponse */ = {
 			isa = PBXGroup;
 			children = (
+				77C9231925E9AE2A00F00323 /* JSONFetcher.swift */,
 				77F1BFEA25E081AA00F6FE37 /* JSONRequest.swift */,
 				7705CE9825D741F500C2C178 /* RaywenderlichResponse.swift */,
 			);
-			path = RaywenderlichCourse;
+			path = RaywenderlichResponse;
 			sourceTree = "<group>";
 		};
 		778B7B4825CE0EC500683150 = {
@@ -98,10 +101,10 @@
 				778B7B5625CE0EC500683150 /* SceneDelegate.swift */,
 				778B7B5825CE0EC500683150 /* ViewController.swift */,
 				778B7B5A25CE0EC500683150 /* Main.storyboard */,
-				778B7B5D25CE0EC700683150 /* Assets.xcassets */,
 				778B7B5F25CE0EC700683150 /* LaunchScreen.storyboard */,
+				778B7B5D25CE0EC700683150 /* Assets.xcassets */,
 				778B7B6225CE0EC700683150 /* Info.plist */,
-				7705CE9C25D741FC00C2C178 /* RaywenderlichCourse */,
+				7705CE9C25D741FC00C2C178 /* RaywenderlichResponse */,
 			);
 			path = PracticeProject;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				778B7B5925CE0EC500683150 /* ViewController.swift in Sources */,
 				778B7B5525CE0EC500683150 /* AppDelegate.swift in Sources */,
 				77F1BFEB25E081AA00F6FE37 /* JSONRequest.swift in Sources */,
+				77C9231A25E9AE2A00F00323 /* JSONFetcher.swift in Sources */,
 				7705CE9925D741F500C2C178 /* RaywenderlichResponse.swift in Sources */,
 				778B7B5725CE0EC500683150 /* SceneDelegate.swift in Sources */,
 			);

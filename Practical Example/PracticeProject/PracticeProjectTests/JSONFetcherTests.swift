@@ -33,37 +33,6 @@ class MockURLProtocol: URLProtocol {
     }
 }
 
-class JSONFetcher<T: JSONRequestProtocol> {
-    let request: T
-    let urlSession: URLSession
-
-    init(request: T, urlSession: URLSession = .shared) {
-        self.request = request
-        self.urlSession = urlSession
-    }
-
-    func fetch(completionHandler: @escaping (RaywenderlichResponse?, Error?) -> Void) {
-        do {
-            let urlRequest = try request.makeRequest()
-            print(urlRequest)
-            urlSession.dataTask(with: urlRequest) { data, _, error in
-                guard let data = data else {
-                    return completionHandler(nil, error)
-                }
-                do {
-                    print(data)
-                    let parsedResponse = try self.request.parseResponse(data: data)
-                    completionHandler(parsedResponse, nil)
-                } catch {
-                    completionHandler(nil, error)
-                }
-            }.resume()
-        } catch {
-            return completionHandler(nil, error)
-        }
-    }
-}
-
 class JSONFetcherTests: XCTestCase {
     private var fetcher: JSONFetcher<JSONRequest>!
 
@@ -119,7 +88,7 @@ class JSONFetcherTests: XCTestCase {
         wait(for: [expectation], timeout: 1)
     }
 
-    func test_fetch_invalidJSON() {
+    func test_fetchInvalidJSON() {
         let mockJSONData = "invalid json".data(using: .utf8)!
         MockURLProtocol.requestHandler = { _ in
             return (HTTPURLResponse(), mockJSONData)
