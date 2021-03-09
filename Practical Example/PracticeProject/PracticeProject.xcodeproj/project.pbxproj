@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7705CE8F25D7413800C2C178 /* JSONRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7705CE8E25D7413800C2C178 /* JSONRequestTests.swift */; };
 		7705CE9925D741F500C2C178 /* RaywenderlichResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7705CE9825D741F500C2C178 /* RaywenderlichResponse.swift */; };
+		773C380025F8218C00BE8383 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773C37FF25F8218C00BE8383 /* Coordinator.swift */; };
+		773C380525F8247C00BE8383 /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773C380425F8247C00BE8383 /* AppCoordinatorTests.swift */; };
 		778B7B5525CE0EC500683150 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778B7B5425CE0EC500683150 /* AppDelegate.swift */; };
 		778B7B5725CE0EC500683150 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778B7B5625CE0EC500683150 /* SceneDelegate.swift */; };
 		778B7B5925CE0EC500683150 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778B7B5825CE0EC500683150 /* ViewController.swift */; };
@@ -33,6 +35,8 @@
 /* Begin PBXFileReference section */
 		7705CE8E25D7413800C2C178 /* JSONRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONRequestTests.swift; sourceTree = "<group>"; };
 		7705CE9825D741F500C2C178 /* RaywenderlichResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaywenderlichResponse.swift; sourceTree = "<group>"; };
+		773C37FF25F8218C00BE8383 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		773C380425F8247C00BE8383 /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
 		778B7B5125CE0EC500683150 /* PracticeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PracticeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		778B7B5425CE0EC500683150 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		778B7B5625CE0EC500683150 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				778B7B5425CE0EC500683150 /* AppDelegate.swift */,
+				773C37FF25F8218C00BE8383 /* Coordinator.swift */,
 				778B7B5625CE0EC500683150 /* SceneDelegate.swift */,
 				778B7B5825CE0EC500683150 /* ViewController.swift */,
 				778B7B5A25CE0EC500683150 /* Main.storyboard */,
@@ -112,6 +117,7 @@
 		778B7B6A25CE0EC700683150 /* PracticeProjectTests */ = {
 			isa = PBXGroup;
 			children = (
+				773C380425F8247C00BE8383 /* AppCoordinatorTests.swift */,
 				77F1BFE625E07E0600F6FE37 /* JSONFetcherTests.swift */,
 				7705CE8E25D7413800C2C178 /* JSONRequestTests.swift */,
 				778B7B6D25CE0EC700683150 /* Info.plist */,
@@ -247,6 +253,7 @@
 				77C9231A25E9AE2A00F00323 /* JSONFetcher.swift in Sources */,
 				7705CE9925D741F500C2C178 /* RaywenderlichResponse.swift in Sources */,
 				778B7B5725CE0EC500683150 /* SceneDelegate.swift in Sources */,
+				773C380025F8218C00BE8383 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +263,7 @@
 			files = (
 				7705CE8F25D7413800C2C178 /* JSONRequestTests.swift in Sources */,
 				77F1BFE725E07E0600F6FE37 /* JSONFetcherTests.swift in Sources */,
+				773C380525F8247C00BE8383 /* AppCoordinatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
